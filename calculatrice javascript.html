@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+        width:200px;
+        border:2px solid;
+        background-color:#A4A4A4;
+        border-radius:10px;
+        text-align:center;
+        }
+        button{
+        width:35px; 
+        height:35px;
+        background-color:#585858;
+        color:white;
+        border-radius:5px;
+        }
+        button.fonct{
+        background-color:#FF8000;
+        }
+        button.op{
+        background-color:#04B404;
+        }
+        input#zone{
+        width:95%;
+        height:25px;
+        }
+        </style>
+    <script>
+        var valeur="";
+        function affiche(valeur){
+            if(f.zone.value==0){
+                f.zone.value="";
+                f.zone.value +=valeur;
+            }
+        }  
+        function reset(){
+            f.zone.value="";
+        } 
+        function carre(){
+            a=f.zone.value;
+            b=a*a;
+            f.zone.value=b;
+        } 
+        function racine_carree(){
+            var a=f.zone.value;
+            var b=Math.sqrt(a);
+            f.zone.value=b;
+        }
+        function calcul(){
+            f.zone.value=eval(f.zone.value);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculatrice simple</h1>
+    <form name="f">
+          <table>
+            <tr><td colspan="3"><input id="zone" type="text" value="0"></td></tr>
+            <tr>
+                <td><button type="button" onclick="affiche('1')">1</button></td>
+                <td><button type="button" onclick="affiche('2')">2</button></td>
+                <td><button type="button" onclick="affiche('3')">3</button></td>
+                <td><button type="button" class="op" onclick="affiche('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="affiche('4')">4</button></td>
+                <td><button type="button" onclick="affiche('5')">5</button></td>
+                <td><button type="button" onclick="affiche('6')">6</button></td>
+                <td><button type="button"  class="op" onclick="affiche('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="affiche('7')">7</button></td>
+                <td><button type="button" onclick="affiche('8')">8</button></td>
+                <td><button type="button" onclick="affiche('9')">9</button></td>
+                <td><button type="button"  class="op" onclick="affiche('*')">*</button>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="affiche('0')">0</button></td>
+                <td><button type="button" onclick="affiche('(')">(</button></td>
+                <td><button type="button" onclick="affiche(')')">)</button></td>
+                <td><button type="button"  class="op" onclick="affiche('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="racine_carree()">&#8730</button></td>
+                <td><button type="button" onclick="carre()">X*X</button></td>
+                <td><button type="button" class="fonct" onclick="calcul()">=</button></td>
+                <td><button type="button" class="fonct" onclick="reset()">C</button></td>
+            </tr>
+          </table>
+    </form>
+</body>
+</html>
